@@ -375,17 +375,6 @@ html {
             }
         }
 
-        .page-2 {
-            .container {
-                grid-template-areas:
-                    'a'
-                    'b'
-                    'c'
-                    'd'
-                    'e';
-                grid-template-columns: 1fr;
-                grid-template-rows: repeat(5, 200px);
-            }
-        }
+       
     }
 }

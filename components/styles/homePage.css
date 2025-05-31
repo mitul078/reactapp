@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+}
+
+.homePage {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.homePage .page-2 {
+  margin-top: 2rem;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.homePage .page-2 .flex-product-show {
+  overflow-x: scroll;
+  position: relative;
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+.homePage .page-2 .flex-product-show .product-show-box {
+  border-radius: 2em;
+  text-align: center;
+  flex-shrink: 0;
+  width: 20rem;
+  height: 25rem;
+  border: 2px solid black;
+}
+.homePage .page-2 .flex-product-show::-webkit-scrollbar {
+  display: none;
+}/*# sourceMappingURL=homePage.css.map */
