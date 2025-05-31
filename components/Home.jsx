@@ -5,7 +5,7 @@ const Home = () => {
     <>
       <div className="homePage">
         <div className="banner">
-          <img src="../public/banner.png" alt="" />
+          <img src="./public/banner.png" alt="" />
         </div>
         <section className="page-1" >
           <div className="box1 bg-yellow-500 ">
