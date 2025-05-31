@@ -11,12 +11,12 @@ const MainRoutes = () => {
   return (
     <>
       <Routes>
-        <Route path='reactapp/' element={<Home/>}></Route>
-        <Route path='reactapp/product' element={<Product/>}></Route>
-        <Route path='reactapp/product/detail/:productName' element={<ProductDetail/>}></Route>
-        <Route path='reactapp/blog' element={<Blog/>}></Route>
-        <Route path='reactapp/login' element={<Login/>}></Route>
-        <Route path='reactapp/cart' element={<Cart/>}></Route>
+        <Route path='/' element={<Home/>}></Route>
+        <Route path='/product' element={<Product/>}></Route>
+        <Route path='/product/detail/:productName' element={<ProductDetail/>}></Route>
+        <Route path='/blog' element={<Blog/>}></Route>
+        <Route path='/login' element={<Login/>}></Route>
+        <Route path='/cart' element={<Cart/>}></Route>
       </Routes>
     </>
   )
