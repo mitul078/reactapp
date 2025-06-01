@@ -10,7 +10,8 @@ const Product = () => {
         'https://plus.unsplash.com/premium_photo-1674929042069-4999154c68b1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D',
         'https://images.unsplash.com/photo-1578301978018-3005759f48f7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D', 'https://images.unsplash.com/photo-1700737503382-0877e9b441f2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D'],
       productName: 'Name1',
-      productSize: '18*18'
+      productSize: '18*18',
+      productPrice: '9999'
     },
     {
       id: '2',
@@ -19,7 +20,8 @@ const Product = () => {
         'https://plus.unsplash.com/premium_photo-1674929042069-4999154c68b1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D',
         'https://images.unsplash.com/photo-1578301978018-3005759f48f7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D', 'https://images.unsplash.com/photo-1700737503382-0877e9b441f2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D'],
       productName: 'Name2',
-      productSize: '18*18'
+      productSize: '18*18',
+      productPrice: '9999'
     },
     {
       id: '3',
@@ -28,7 +30,8 @@ const Product = () => {
         'https://plus.unsplash.com/premium_photo-1674929042069-4999154c68b1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D',
         'https://images.unsplash.com/photo-1578301978018-3005759f48f7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D', 'https://images.unsplash.com/photo-1700737503382-0877e9b441f2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D'],
       productName: 'Name3',
-      productSize: '18*18'
+      productSize: '18*18',
+      productPrice: '9999'
     },
     {
       id: '4',
@@ -38,7 +41,8 @@ const Product = () => {
         'https://images.unsplash.com/photo-1578301978018-3005759f48f7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D', 'https://images.unsplash.com/photo-1700737503382-0877e9b441f2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D'
       ],
       productName: 'Name4',
-      productSize: '18*18'
+      productSize: '18*18',
+      productPrice: '9999'
     },
   ];
   const productBox02 = [
@@ -49,7 +53,8 @@ const Product = () => {
         'https://plus.unsplash.com/premium_photo-1674929042069-4999154c68b1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D',
         'https://images.unsplash.com/photo-1578301978018-3005759f48f7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D', 'https://images.unsplash.com/photo-1700737503382-0877e9b441f2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D'],
       productName: 'Name1',
-      productSize: '18*18'
+      productSize: '18*18',
+      productPrice: '9999'
     },
     {
       id: '2',
@@ -58,7 +63,8 @@ const Product = () => {
         'https://plus.unsplash.com/premium_photo-1674929042069-4999154c68b1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D',
         'https://images.unsplash.com/photo-1578301978018-3005759f48f7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D', 'https://images.unsplash.com/photo-1700737503382-0877e9b441f2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D'],
       productName: 'Name2',
-      productSize: '18*10'
+      productSize: '18*10',
+      productPrice: '9999'
     },
     {
       id: '3',
@@ -67,7 +73,8 @@ const Product = () => {
         'https://plus.unsplash.com/premium_photo-1674929042069-4999154c68b1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D',
         'https://images.unsplash.com/photo-1578301978018-3005759f48f7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D', 'https://images.unsplash.com/photo-1700737503382-0877e9b441f2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D'],
       productName: 'Name3',
-      productSize: '18*18'
+      productSize: '18*18',
+      productPrice: '9999'
     },
     {
       id: '4',
@@ -77,16 +84,17 @@ const Product = () => {
         'https://images.unsplash.com/photo-1578301978018-3005759f48f7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D', 'https://images.unsplash.com/photo-1700737503382-0877e9b441f2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D'
       ],
       productName: 'Name4',
-      productSize: '18*18'
+      productSize: '18*18',
+      productPrice: '9999'
     },
   ];
 
 
 
   const navigate = useNavigate();
-  const handler = (productName, productImage, productSize) => {
+  const handler = (productName, productImage, productSize , productPrice) => {
     navigate(`/Product/Detail/${productName}`, {
-      state: { productName, productImage, productSize }
+      state: { productName, productImage, productSize, productPrice }
     })
   }
 
@@ -111,7 +119,7 @@ const Product = () => {
                       <p>{box.productName}</p>
                       <p>{box.productSize}</p>
                     </div>
-                    <button onClick={() => handler(box.productName, box.productImage, box.productSize)}>See</button>
+                    <button onClick={() => handler(box.productName, box.productImage, box.productSize,box.productPrice)}>See</button>
                   </div>
                 </div>
               ))}
@@ -124,7 +132,7 @@ const Product = () => {
                     <p>{productBox01[0].productName}</p>
                     <p>{productBox01[0].productSize}</p>
                   </div>
-                  <button onClick={() => handler(productBox01[0].productName, productBox01[0].productImage, productBox01[0].productSize)}>See</button>
+                  <button onClick={() => handler(productBox01[0].productName, productBox01[0].productImage, productBox01[0].productSize,productBox01[0].productPrice)}>See</button>
                 </div>
               </div>
             </div>
@@ -139,7 +147,7 @@ const Product = () => {
                       <p>{box.productName}</p>
                       <p>{box.productSize}</p>
                     </div>
-                    <button onClick={() => handler(box.productName, box.productImage, box.productSize)}>See</button>
+                    <button onClick={() => handler(box.productName, box.productImage, box.productSize,box.productPrice)}>See</button>
                   </div>
                 </div>
               ))}
@@ -152,7 +160,7 @@ const Product = () => {
                     <p>{productBox02[0].productName}</p>
                     <p>{productBox02[0].productSize}</p>
                   </div>
-                  <button onClick={() => handler(productBox02[0].productName, productBox02[0].productImage, productBox02[0].productSize)}>See</button>
+                  <button onClick={() => handler(productBox02[0].productName, productBox02[0].productImage, productBox02[0].productSize,productBox02[0].productPrice)}>See</button>
                 </div>
               </div>
             </div>

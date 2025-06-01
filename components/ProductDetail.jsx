@@ -9,13 +9,14 @@ const ProductDetail = () => {
     const { addToCart } = useCart();
     const [isAdd, setisAdd] = useState(false);
     const location = useLocation();
-    const { productName, productSize, productImage = [] } = location.state || {};
+    const { productName, productSize, productImage = [] , productPrice } = location.state || {};
     const [image, setimage] = useState(productImage[0])
     const AddCartItem = () => {
         const newItem = {
             name: productName,
             size: productSize,  
-            image: productImage[0]
+            image: productImage[0],
+            price: productPrice
         }
         addToCart(newItem);
         setisAdd(true)
@@ -52,7 +53,7 @@ const ProductDetail = () => {
                                         {isAdd ? "Added" : "Add to Cart"}
                                     </button>
 
-                                    <button className='buy'>Buy</button>
+                                    <button className='buy'>Buy ₹{productPrice}</button>
                                 </div>
                             </div>
                         </div>
@@ -73,7 +74,7 @@ const ProductDetail = () => {
                             {isAdd ? "Added" : "Add to Cart"}
                         </button>
 
-                        <button>Buy</button>
+                        <button>Buy ₹{productPrice}</button>
                     </div>
                 </div>
             </div>
