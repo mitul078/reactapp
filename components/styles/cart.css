@@ -47,7 +47,7 @@ html, body {
 .cartPage .container .box .product-detail h1 {
   font-size: 1.3rem;
 }
-.cartPage .container .box .product-detail p {
+.cartPage .container .box .product-detail .des {
   opacity: 0.7;
   width: 90%;
 }

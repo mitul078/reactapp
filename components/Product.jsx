@@ -1,103 +1,17 @@
 import { useNavigate } from 'react-router-dom';
+import { ProductContext } from './ProductContext'
 import './styles/product.css'
+import { useContext } from 'react';
 const Product = () => {
-
-  const productBox01 = [
-    {
-      id: '1',
-      productImage: ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnyKHvGaieMm47-zoWOIDVD2tKdXq1i4erUg&s',
-        'https://images.unsplash.com/photo-1605752019115-200d120c9b98?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D',
-        'https://plus.unsplash.com/premium_photo-1674929042069-4999154c68b1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D',
-        'https://images.unsplash.com/photo-1578301978018-3005759f48f7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D', 'https://images.unsplash.com/photo-1700737503382-0877e9b441f2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D'],
-      productName: 'Name1',
-      productSize: '18*18',
-      productPrice: '9999'
-    },
-    {
-      id: '2',
-      productImage: ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX3dbqrrDghhZG81_sn24up_Al05TpR48SGw&s',
-        'https://images.unsplash.com/photo-1605752019115-200d120c9b98?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D',
-        'https://plus.unsplash.com/premium_photo-1674929042069-4999154c68b1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D',
-        'https://images.unsplash.com/photo-1578301978018-3005759f48f7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D', 'https://images.unsplash.com/photo-1700737503382-0877e9b441f2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D'],
-      productName: 'Name2',
-      productSize: '18*18',
-      productPrice: '9999'
-    },
-    {
-      id: '3',
-      productImage: ['https://i.pinimg.com/564x/6a/4e/6e/6a4e6e66c7551eaf366923f52b26b87d.jpg',
-        'https://images.unsplash.com/photo-1605752019115-200d120c9b98?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D',
-        'https://plus.unsplash.com/premium_photo-1674929042069-4999154c68b1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D',
-        'https://images.unsplash.com/photo-1578301978018-3005759f48f7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D', 'https://images.unsplash.com/photo-1700737503382-0877e9b441f2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D'],
-      productName: 'Name3',
-      productSize: '18*18',
-      productPrice: '9999'
-    },
-    {
-      id: '4',
-      productImage: ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3eKg9nm5uVR-JXPyam3YqtGI_E8f3Bhb4hA&s',
-        'https://images.unsplash.com/photo-1605752019115-200d120c9b98?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D',
-        'https://plus.unsplash.com/premium_photo-1674929042069-4999154c68b1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D',
-        'https://images.unsplash.com/photo-1578301978018-3005759f48f7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D', 'https://images.unsplash.com/photo-1700737503382-0877e9b441f2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D'
-      ],
-      productName: 'Name4',
-      productSize: '18*18',
-      productPrice: '9999'
-    },
-  ];
-  const productBox02 = [
-    {
-      id: '1',
-      productImage: ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnyKHvGaieMm47-zoWOIDVD2tKdXq1i4erUg&s',
-        'https://images.unsplash.com/photo-1605752019115-200d120c9b98?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D',
-        'https://plus.unsplash.com/premium_photo-1674929042069-4999154c68b1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D',
-        'https://images.unsplash.com/photo-1578301978018-3005759f48f7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D', 'https://images.unsplash.com/photo-1700737503382-0877e9b441f2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D'],
-      productName: 'Name1',
-      productSize: '18*18',
-      productPrice: '9999'
-    },
-    {
-      id: '2',
-      productImage: ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSX3dbqrrDghhZG81_sn24up_Al05TpR48SGw&s',
-        'https://images.unsplash.com/photo-1605752019115-200d120c9b98?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D',
-        'https://plus.unsplash.com/premium_photo-1674929042069-4999154c68b1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D',
-        'https://images.unsplash.com/photo-1578301978018-3005759f48f7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D', 'https://images.unsplash.com/photo-1700737503382-0877e9b441f2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D'],
-      productName: 'Name2',
-      productSize: '18*10',
-      productPrice: '9999'
-    },
-    {
-      id: '3',
-      productImage: ['https://i.pinimg.com/564x/6a/4e/6e/6a4e6e66c7551eaf366923f52b26b87d.jpg',
-        'https://images.unsplash.com/photo-1605752019115-200d120c9b98?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D',
-        'https://plus.unsplash.com/premium_photo-1674929042069-4999154c68b1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D',
-        'https://images.unsplash.com/photo-1578301978018-3005759f48f7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D', 'https://images.unsplash.com/photo-1700737503382-0877e9b441f2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D'],
-      productName: 'Name3',
-      productSize: '18*18',
-      productPrice: '9999'
-    },
-    {
-      id: '4',
-      productImage: ['https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3eKg9nm5uVR-JXPyam3YqtGI_E8f3Bhb4hA&s',
-        'https://images.unsplash.com/photo-1605752019115-200d120c9b98?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D',
-        'https://plus.unsplash.com/premium_photo-1674929042069-4999154c68b1?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D',
-        'https://images.unsplash.com/photo-1578301978018-3005759f48f7?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D', 'https://images.unsplash.com/photo-1700737503382-0877e9b441f2?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8bGFuZHNjYXBlJTIwaW1hZ2V8ZW58MHx8MHx8fDA%3D'
-      ],
-      productName: 'Name4',
-      productSize: '18*18',
-      productPrice: '9999'
-    },
-  ];
-
-
-
+  const { products } = useContext(ProductContext);
   const navigate = useNavigate();
-  const handler = (productName, productImage, productSize , productPrice) => {
-    navigate(`/Product/Detail/${productName}`, {
-      state: { productName, productImage, productSize, productPrice }
-    })
-  }
+  const firstBox = products.slice(0, 4)
+  const secondBox = products.slice(4, 8)
 
+  const handler = (name, product) => {
+    navigate(`/Product/Detail/${name}`, { state: { product } })
+  }
+  
   return (
     <div className="productPage">
       <div className="container">
@@ -111,66 +25,70 @@ const Product = () => {
         <div className="grid-container">
           <div className="product-box">
             <div className="grid-detail">
-              {productBox01.map((box, i) => (
+              {firstBox.map((box, i) => (
                 <div className="box" key={i}>
-                  <img src={box.productImage} alt="" />
+                  <img src={box.productImages[0]} alt="" />
                   <div className="des">
                     <div className="l">
                       <p>{box.productName}</p>
                       <p>{box.productSize}</p>
                     </div>
-                    <button onClick={() => handler(box.productName, box.productImage, box.productSize,box.productPrice)}>See</button>
+                    <button onClick={() => handler(box.productName, box)}>See</button>
                   </div>
                 </div>
               ))}
             </div>
-            <div className="mobile-product-box">
-              <div className="box">
-                <img src={productBox01[0].productImage} alt="" />
-                <div className="des">
-                  <div className="l">
-                    <p>{productBox01[0].productName}</p>
-                    <p>{productBox01[0].productSize}</p>
+            {firstBox[0] && (
+              <div className="mobile-product-box">
+                <div className="box">
+                  <img src={firstBox[0].productImages[0]} alt="" />
+                  <div className="des">
+                    <div className="l">
+                      <p>{firstBox[0].productName}</p>
+                      <p>{firstBox[0].productSize}</p>
+                    </div>
+                    <button onClick={() => handler(firstBox[0].productName, firstBox[0])}>See</button>
                   </div>
-                  <button onClick={() => handler(productBox01[0].productName, productBox01[0].productImage, productBox01[0].productSize,productBox01[0].productPrice)}>See</button>
                 </div>
               </div>
-            </div>
+            )}
           </div>
           <div className="product-box">
             <div className="grid-detail">
-              {productBox02.map((box, i) => (
+              {secondBox.map((box, i) => (
                 <div className="box" key={i}>
-                  <img src={box.productImage} alt="" />
+                  <img src={box.productImages[0]} alt="" />
                   <div className="des">
                     <div className="l">
                       <p>{box.productName}</p>
                       <p>{box.productSize}</p>
                     </div>
-                    <button onClick={() => handler(box.productName, box.productImage, box.productSize,box.productPrice)}>See</button>
+                    <button onClick={() => handler(box.productName, box)}>See</button>
                   </div>
                 </div>
               ))}
             </div>
-            <div className="mobile-product-box">
-              <div className="box">
-                <img src={productBox02[0].productImage} alt="" />
-                <div className="des">
-                  <div className="l">
-                    <p>{productBox02[0].productName}</p>
-                    <p>{productBox02[0].productSize}</p>
+              {secondBox[0] && (
+              <div className="mobile-product-box">
+                <div className="box">
+                  <img src={secondBox[0].productImages[0]} alt="" />
+                  <div className="des">
+                    <div className="l">
+                      <p>{secondBox[0].productName}</p>
+                      <p>{secondBox[0].productSize}</p>
+                    </div>
+                    <button onClick={() => handler(secondBox[0].productName, secondBox[0])}>See</button>
                   </div>
-                  <button onClick={() => handler(productBox02[0].productName, productBox02[0].productImage, productBox02[0].productSize,productBox02[0].productPrice)}>See</button>
                 </div>
               </div>
-            </div>
+            )}
           </div>
           <div className="product-box"></div>
           <div className="product-box"></div>
           <div className="product-box"></div>
         </div>
-      </section>
-    </div>
+      </section >
+    </div >
   )
 }
 

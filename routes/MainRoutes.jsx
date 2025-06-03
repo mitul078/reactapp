@@ -6,6 +6,7 @@ import Blog from '../components/Blog'
 import Login from '../components/Login'
 import ProductDetail from '../components/ProductDetail'
 import Cart from '../components/Cart'
+import AdminPanal from '../components/AdminPanal'
 
 const MainRoutes = () => {
   return (
@@ -17,6 +18,7 @@ const MainRoutes = () => {
         <Route path='/blog' element={<Blog/>}></Route>
         <Route path='/login' element={<Login/>}></Route>
         <Route path='/cart' element={<Cart/>}></Route>
+        <Route path='/admin' element={<AdminPanal/>}></Route>
       </Routes>
     </>
   )

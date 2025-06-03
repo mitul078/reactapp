@@ -1,58 +1,49 @@
-import React from 'react'
-import { useLocation } from 'react-router-dom'
-import { useState } from 'react'
-import { useCart } from './CartContext'
-import { toast } from 'react-toastify'
+import { useContext, useState } from 'react'
+import { ToastContainer } from 'react-toastify';
 import './styles/productDetail.css'
-
+import { ProductContext } from './ProductContext'
+import { useLocation } from 'react-router-dom';
+import { useCart } from './CartContext';
 const ProductDetail = () => {
-    const { addToCart } = useCart();
-    const [isAdd, setisAdd] = useState(false);
-    const location = useLocation();
-    const { productName, productSize, productImage = [] , productPrice } = location.state || {};
-    const [image, setimage] = useState(productImage[0])
-    const AddCartItem = () => {
-        const newItem = {
-            name: productName,
-            size: productSize,  
-            image: productImage[0],
-            price: productPrice
-        }
-        addToCart(newItem);
-        setisAdd(true)
-        toast.success("Item added to cart!", {
-            position: "top-right",
-            autoClose: 1000,
-        });
-    }
 
+    const [isAdd, setisAdd] = useState(false);
+    const { addToCart} = useCart();
+
+    const location = useLocation()
+    const { product } = location.state || {};
+    if (!product) return <p>No product data found</p>;
+    const { productName, productSize, productPrice, productDescription } = product;
+    const [selectedImage, setSelectedImage] = useState(product.productImages[0]);
+
+    const handleSubmit = () =>{
+        addToCart(product)
+        setisAdd(true)
+    }
     return (
         <div className='productDetailPage'>
             <div className="container">
                 <div className="left-side">
                     <div className="product-image-section">
                         <div className="image-box">
-                            {productImage.map((image, i) => (
-                                <div key={i} className="box" onClick={() => setimage(image)}>
-                                    <img src={image} />
+                            {product.productImages.map((image, i) => (
+                                <div key={i} className="box" onClick={() => setSelectedImage(image)}>
+                                    <img  src={image} alt={`Product ${i}`} />
                                 </div>
                             ))}
                         </div>
                     </div>
                     <div className="left">
                         <div className="image">
-                            <img src={image} alt="" />
+                            <img src={selectedImage} alt="" />
                             <div className="mobile-view">
-                                <h1>{productName}</h1>
+                                <h1>{product.productname}</h1>
                                 <p>{productSize}</p>
                                 <div className="btn">
-                                    <button
-                                        onClick={AddCartItem}
-                                        className='cart'
-                                        disabled={isAdd}>
-                                        {isAdd ? "Added" : "Add to Cart"}
-                                    </button>
-
+                                    <button className='cart'
+                                    onClick={handleSubmit}
+                                    disabled={isAdd}
+                                    >{isAdd ? "Added" : "Add to cart"}</button>
+                                    <ToastContainer position="top-right" autoClose={2000} />
                                     <button className='buy'>Buy ₹{productPrice}</button>
                                 </div>
                             </div>
@@ -62,14 +53,13 @@ const ProductDetail = () => {
                 </div>
                 <div className="right">
                     <h1>{productName}</h1>
-                    <p>Product Details.. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus inventore laboriosam cum facilis quam earum nisi. Minima et doloribus ullam repellendus dolor quas, commodi illo, quibusdam ab ipsum voluptatum recusandae?
-                        lor
+                    <p>Product Details..{productDescription}
                     </p>
                     <h4>Size: {productSize}</h4>
                     <div className="btn">
                         <button
-                            onClick={AddCartItem}
                             className='cart'
+                            onClick={handleSubmit}
                             disabled={isAdd}>
                             {isAdd ? "Added" : "Add to Cart"}
                         </button>
@@ -78,7 +68,6 @@ const ProductDetail = () => {
                     </div>
                 </div>
             </div>
-
         </div>
     )
 }
